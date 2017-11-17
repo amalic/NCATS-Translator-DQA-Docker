@@ -26,15 +26,12 @@ RUN cd && \
     cp config.py.DEFAULT config.py && \
     chmod +x /etc/init.d/graphdb
 
-#RUN update-rc.d graphdb defaults && update-rc.d graphdb enable
-
 WORKDIR /root/NCATS-Translator-DQA/ncats_translator_dqa
 
-#ENTRYPOINT ["python", "translator_dqa.py"]
+COPY entrypoint.sh ./
 
-#CMD ["python", "translator_dqa.py"]
+RUN apt install netcat -y
 
-#COPY docker-entrypoint.sh /usr/local/bin/
-#RUN chmod 777 /usr/local/bin/docker-entrypoint.sh && ln -s /usr/local/bin/docker-entrypoint.sh /
-#RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
-#ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
+
+EXPOSE 7200
