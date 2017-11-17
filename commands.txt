@@ -1,0 +1,506 @@
+   81  nano docker-compose.yml 
+   82  docker exec -it bio2rdf_webapp_1 bash
+   99  docker ps
+  100  cd ~/docker/
+  101  nano jupyterhub_on_docker.sh 
+  105  nano ~/docker/jupyterhub_on_docker.sh 
+  106  docker exec -it jupyter bash
+  113  docker run -it --name python2 -v ./:/usr/src/app -w -usr/src/app python:2 bash
+  114  docker run -it --name python2 -v ./:/usr/src/app -w /usr/src/app python:2 bash
+  116  docker run -it --name python2 -v /home/malic/paul:/usr/src/app -w /usr/src/app python:2 bash
+  122  docker rm python2
+  124  cd docker/
+  129  docker-compose down && docker-compose up -d
+  130  nano docker-compose.yml 
+  133  nano ../mold-dock/docker-compose.hub.yml 
+  134  nano docker-compose.yml 
+  135  docker-compose down && docker-compose up -d
+  137  docker-compose down && docker-compose up -d
+  139  cd docker/bio2rdf
+  140  nano docker-compose.yml 
+  141  docker logs nginxproxy --follow
+  142  nano docker-compose.yml 
+  143  docker-compose down && docker-compose up -d
+  144  docker-compose down
+  145  nano docker-compose.yml 
+  146  docker-compose down && docker-compose up -d
+  147  docker-compose down && docker-compose up -d
+  148  docker-compose down && docker-compose up -d --remove-orphans
+  149  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  150  nano docker-compose.yml 
+  151  cd docker/bio2rdf
+  154  docker ps
+  156  docker logs bio2rdf_webapp_1 --follow
+  158  docker-compose down && docker-compose up -d
+  159  nano docker-compose.yml 
+  160  docker-compose down && docker-compose up -d
+  162  nano docker-compose.yml 
+  164  docker-compose down && docker-compose up -d
+  166  docker-compose down && docker-compose up -d
+  168  cd docker/bio2rdf
+  170  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  180  docker logs bio2rdf_website_1
+  181  docker ps
+  182  docker logs bio2rdf_webapp_1
+  186  cd docker
+  189  docker-compose down --remove-orphans
+  190  docker-compose up -d
+  192  docker ps
+  195  docker ps
+  196  docker exec -it bio2rdf_webapp_1 bash
+  201  docker run -d -p 8787:8787 rocker/rstudio
+  202  docker ps
+  203  docker kill ecstatic_gates
+  204  docker rm ecstatic_gates
+  205  docker run --name rstudio_humi -v /data/pharmgkb:home/rstudio/pharmgkb -d -p 8787:8787 rocker/rstudio
+  206  docker run --name rstudio_humi -v /data/pharmgkb:/home/rstudio/pharmgkb -d -p 8787:8787 rocker/rstudio
+  210  docker exec -it rstudio_humi bash
+  212  docker ps
+  213  docker ps
+  214  cd docker
+  216  curl -Lso docker-compose.yml https://raw.githubusercontent.com/ChristianKniep/docker-elk/master/docker-compose.yml
+  217  docker-compose up -d
+  218  docker ps
+  219  docker stop elastic
+  220  docker-compose up -d
+  221  docker ps
+  222  docker logs mystack_elk_1
+  225  docker-compose down
+  226  docker-compose up -d
+  229  cd docker/
+  235  docker-compose down
+  238  ./prefixcommons_on_docker.sh 
+  240  cd docker
+  245  nano docker-compose.yml 
+  246  docker-compose up -d
+  247  nano docker-compose.yml 
+  248  docker-compose up -d
+  258  cd docker/elk/
+  260  nano docker-compose.yml 
+  261  docker-compose down --remove-orphans
+  263  docker-compose up -d --remove-orphans
+  265  cd docker
+  270  docker run -it python:3.5 bash
+  271  docker system prune -a
+  272  docker run -it --rm python:3.5 bash
+  274  docker run -it python:3.5 bash
+  275  docker run -it --rm python:3.5 bash
+  278  docker build -t translator_dqa .
+  279  docker run -it translator_dqa bash
+  281  docker build -t translator_dqa .
+  282  docker run -it translator_dqa bash
+  283  docker run -it translator_dqa -h
+  284  docker run -it translator_dqa bash
+  286  docker build -t translator_dqa .
+  287  docker run -it translator_dqa bash
+  289  docker build -t translator_dqa .
+  290  docker run -it translator_dqa bash
+  291  docker stystem prune -a
+  292  docker system prune -a
+  294  docker build -t translator_dqa .
+  295  docker run -it --rm python:3.5 bash
+  296  docker build -t translator_dqa .
+  297  docker run -it translator_dqa bash
+  298  docker build -t translator_dqa .
+  299  docker run -it translator_dqa bash
+  300  docker system prune -a
+  301  docker build -t translator_dqa .
+  302  docker run -it translator_dqa bash
+  303  docker build -t translator_dqa .
+  304  docker run -it translator_dqa -h
+  305  docker build -t translator_dqa .
+  306  docker run -it translator_dqa -h
+  307  docker build -t translator_dqa .
+  308  docker run -it
+  309  docker build -t translator_dqa .
+  310  docker run -it translator_dqa bash
+  311  docker build -t translator_dqa .
+  312  docker run -it translator_dqa bash
+  313  docker build -t translator_dqa .
+  314  docker run -it translator_dqa bash
+  315  docker ps
+  316  docker run -it translator_dqa -h
+  317  docker run -it translator_dqa bash
+  318  docker build -t translator_dqa .
+  319  docker run -it translator_dqa -h
+  320  docker run -it translator_dqa -f
+  321  docker run -it translator_dqa -h
+  322  docker build -t translator_dqa .
+  323  docker run -it translator_dqa -h
+  324  docker run -it translator_dqa bash
+  325  docker build -t translator_dqa .
+  326  docker run -it translator_dqa -h
+  327  docker build -t translator_dqa .
+  328  docker run -it translator_dqa -h
+  329  docker build -t translator_dqa .
+  330  docker run -it translator_dqa -h
+  331  docker build -t translator_dqa .
+  332  docker run -it translator_dqa -h
+  333  docker run --name myadmin -d -e PMA_ARBITRARY=1 -p 8080:80 phpmyadmin/phpmyadmin
+  334  docker run -it translator_dqa -h
+  335  docker build -t translator_dqa .
+  336  docker run -it translator_dqa -h
+  337  docker build -t translator_dqa .
+  338  docker run -it translator_dqa -h
+  339  docker build -t translator_dqa .
+  340  docker run -it translator_dqa -h
+  341  docker run -it translator_dqa -f https://biosharing.org/biodbcore-000015
+  342  docker run -it -v /data/translator_dqa/output:/root/NCATS-Translator-DQA/Output/ translator_dqa -f https://biosharing.org/biodbcore-000015
+  348  docker run -it translator_dqa bash
+  349  docker run -it translator_dqa -h
+  350  docker build -t translator_dqa .
+  351  docker run -it translator_dqa bash
+  353  docker ps
+  354  docker kill myadmin
+  355  docker rm myadmon
+  356  docker rm myadmin
+  357  docker run -d --name mysql_myadmon -p 49160:22 -p 49161:80 -p 49162:3306 --rm wnameless/mysql-phpmyadmin
+  358  docker ps
+  359  docker run -d --name mysql_myadmon -p 49160:22 -p 49161:80 -p 49162:3306 -v /data/mysql:/var/lib/mysql/ --rm wnameless/mysql-phpmyadmin
+  360  docker kill mysql_myadmon
+  361  docker rm mysql_myadmon
+  362  docker run -d --name mysql_myadmin -p 49160:22 -p 49161:80 -p 49162:3306 -v /data/mysql:/var/lib/mysql/ --rm wnameless/mysql-phpmyadmin
+  363  docker kill mysql_myadmin
+  364  docker rm mysql_myadmin
+  365  docker run -it --name mysql_myadmin -p 49160:22 -p 49161:80 -p 49162:3306 -v /data/mysql:/var/lib/mysql/ --rm wnameless/mysql-phpmyadmin
+  366  docker run -it --name mysql_myadmin -p 49160:22 -p 49161:80 -p 49162:3306 --rm wnameless/mysql-phpmyadmin
+  367  docker run -it --name mysql_myadmin -p 49160:22 -p 49161:80 -p 49162:3306 -v /data/mysql:/var/lib/mysql/mysql/ --rm wnameless/mysql-phpmyadmin
+  368  docker run -it --name mysql_myadmin -p 49160:22 -p 49161:80 -p 49162:3306 --rm wnameless/mysql-phpmyadmin
+  370  git clone https://github.com/phpmyadmin/docker.git
+  372  mv docker/ phpmyadmin
+  374  mv docker-compose.yml docker-compose.orig.yml
+  375  mv docker-compose.testing.yml docker-compose.yml
+  376  docker-compose up 
+  377  docker ps
+  378  docker system prune -a
+  380  docker stats
+  381  cd docker/elk/
+  382  docker-compose down
+  385  ps -ef | docker
+  386  ps -ef | grep docker
+  387  ps -ef | grep docker | grep python
+  391  docker ps
+  392  docker cp vibrant_neumann/etc/init.d/graphdb .
+  393  docker cp vibrant_neumann:/etc/init.d/graphdb .
+  397  docker cp graphdb vibrant_neumann:/etc/init.d/
+  398  docker ps
+  399  docker cp graphdb practical_keller:/etc/init.d/
+  401  docker ps
+  402  docker kill 3ad199c18540
+  403  docker rm 3ad199c18540
+  404  docker ps
+  406  docker ps
+  408  docker ps
+  410  docker ps
+  415  cp entrypoint.sh docker-entrypoint.sh 
+  419  docker exec -it mysql_myadmin bash
+  420  cd ~/docker/phpmyadmin/
+  422  nano docker-compose.yml 
+  423  cd docker/
+  426  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  428  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  430  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  432  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  434  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  436  nano docker-compose.yml 
+  438  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  440  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  442  nano docker-compose.yml 
+  443  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  444  nano docker-compose.yml 
+  445  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  446  nano docker-compose.yml 
+  447  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  449  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  451  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  453  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  455  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  467  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  469  git clone https://github.com/deviantony/docker-elk.git
+  470  cd docker-elk
+  472  nano docker-compose.yml 
+  473  docker stop elastic
+  475  docker-compose up -d
+  476  nano docker-compose.yml 
+  477  docker ps
+  478  docker logs dockerelk_kibana_1
+  479  docker logs dockerelk_kibana_1 --follow
+  480  nano docker-compose.yml 
+  481  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  483  ./prefixcommons_on_docker.sh 
+  484  docker logs dockerelk_kibana_1 --follow
+  486  cd docker
+  489  docker run -d -e USERNAME=test -e PASSWORD=test -p 8888:80 morrisjobke/webdav
+  490  docker run -d -e USERNAME=test -e PASSWORD=test -p 8889:80 morrisjobke/webdav
+  491  docker ps
+  492  docker kill affectionate_lewin
+  493  docker rm affectionate_lewin
+  495  cd docker
+  531  cd docker/kraken/
+  533  docker build -t translator_dqa .
+  535  docker run -it --rm translator_dqa -h
+  537  docker build -t translator_dqa .
+  538  docker build -t translator_dqa bash
+  539  docker build -t translator_dqa -h
+  540  docker build -t translator_dqa .
+  543  docker logs dockerelk_kibana_1 --follow
+  544  cd docker/elk/
+  546  nano docker-compose.yml 
+  560  cd docker
+  563  nano docker-compose.yml 
+  564  docker-compose down --remove-orphans && docker-compose up -d --remove-orphans
+  565  docker ps
+  567  docker ps
+  568  cd docker
+  570  nano docker-compose.yml 
+  571  docker-compose down
+  572  docker-compose up -d
+  573  docker stop httpd
+  575  ./prefixcommons_on_docker.sh 
+  577  cd docker
+  584  docker build -t lodestar .
+  585  docker run -it --rm lodestar bash
+  587  docker build -t lodestar .
+  588  docker build -t lodestar . && docker run -it --rm lodestar bash
+  590  docker build -t lodestar . && docker run -it --rm lodestar bash
+  592  docker build -t lodestar . && docker run -it --rm lodestar bash
+  593  docker build -t lodestar . && docker run -it --rm lodestar
+  594  docker build -t lodestar . && docker stop lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  595  docker build -t lodestar . && docker kill lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  596  docker build -t lodestar . && try docker kill lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  597  docker build -t lodestar . && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  598  docker build -t lodestar . && docker kill lodestar && docker run --name lodestar -it --rm lodestar
+  599  docker build -t lodestar . docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  600  docker build -t lodestar . && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  602  docker build -t lodestar . && docker kill lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  604  docker build -t lodestar . && docker kill lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  606  docker build -t lodestar . && docker kill lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  608  docker build -t lodestar . && docker kill lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  609  docker build -t lodestar . && docker kill lodestar && docker rm lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  610  docker rm lodestar
+  611  docker run --name lodestar -d lodestar 
+  612  docker exec -it lodestar bash
+  614  docker build -t lodestar . && docker kill lodestar && docker rm lodestar && docker run --name lodestar -d --rm lodestar && docker exec -it lodestar bash 
+  615  docker build -t lodestar . && docker kill lodestar && docker rm lodestar && docker run --name lodestar -d -p 8080:8080 --rm lodestar && docker exec -it lodestar bash 
+  616  docker run --name lodestar -d -p 8080:8080 --rm lodestar && docker exec -it lodestar bash 
+  623  docker build -t lodestar .
+  624  docker kill lodestar
+  625  docker rm lodestar
+  626  docker run --name lodestar -d -p 8080:8080 --rm lodestar && docker exec -it lodestar bash 
+  628  docker build -t lodestar .
+  629  docker kill lodestar
+  630  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  632  docker commit -m "delete temporary build folder"
+  633  docker commit
+  639  docker exec -it lodestar bash
+  641  cd docker
+  648  docker build -t lodestar .
+  649  docker kill lodestar
+  650  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  656  cd docker/openlifedata/
+  660  cd docker
+  664  docker exec -it lodestar bash
+  665  docker cp lodestar:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties orig.lode.properties
+  667  docker kill lodestart
+  668  docker kill lodestar
+  669  docker run --name lodestar -d -p 8080:8080 --rm -v orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  670  docker exec -it lodestar bash
+  671  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  672  docker kill lodestar
+  673  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  674  docker kill lodestar
+  675  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  676  docker exec -it lodestar bash
+  677  docker kill lodestar
+  678  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  679  docker run --name lodestar -it -p 8080:8080 --rm lodestar 
+  680  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  685  docker kill lodestar
+  686  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  687  docker run --name lodestar -it -p 8080:8080 --rm lodestar 
+  689  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  690  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  691  docker exec -it lodestar bash
+  692  docker kill lodestar
+  694  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  695  docker run --name lodestar -it -p 8080:8080 --rm -v lodestar 
+  696  docker run --name lodestar -it -p 8080:8080 --rm lodestar 
+  697  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  698  docker exec -it lodestar bash
+  700  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  701  docker kill lodestar
+  702  docker run --name lodestar -it -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  703  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/orig.lode.properties:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/lode.properties lodestar 
+  704  docker exec -it lodestar bash
+  705  docker kill lodestar
+  706  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  709  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  710  docker exec -it lodestar bash
+  711  docker cp lodestar:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/log4j.xml config-lodestar/log4j.xml
+  712  docker kill lodestar
+  713  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/config-lodestar/:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/ lodestar 
+  714  docker exec -it lodestar bash
+  716  docker ps
+  718  docker kill lodestar
+  719  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  720  docker exec -it lodestar bash
+  722  cd docker
+  729  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/config-lodestar/:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/ lodestar 
+  730  docker kill lodestar
+  731  docker run --name lodestar -d -p 8080:8080 --rm -v $PWD/config-lodestar/:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/ lodestar 
+  732  docker kill lodestar
+  733  docker run --name lodestar -d -p 8080:8080 --rm -v /home/malic/docker/openlifedata/config-lodestar/:/usr/local/tomcat/webapps/lodestar/WEB-INF/classes/ lodestar 
+  734  docker logs lodestar
+  739  docker exec -it lodestar bash
+  741  docker kill lodestar
+  742  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  743  cd docker
+  745  nano docker-compose.yml 
+  749  docker ps
+  750  cd docker/
+  752  nano docker-compose.yml 
+  755  docker ps
+  756  docker exec -it  bio2rdf_webapp_1 bash
+  757  docker exec -it bio2rdf_virtuoso_1 bash
+  759  cd docker
+  767  cd docker/
+  792  cd docker/openlifedata/lodestar/
+  801  cp lode.properties ~/docker/openlifedata/config-lodestar/orig.lode.properties 
+  802  cd ~/docker/openlifedata/config-lodestar/
+  807  cp /home/malic/docker/openlifedata/lodestar/web-ui/src/main/resources/lode.properties ~/docker/openlifedata/config-lodestar/orig.lode.properties 
+  808  cp /home/malic/docker/openlifedata/lodestar/web-ui/src/main/resources/log4j.xml ~/docker/openlifedata/config-lodestar/orig.log4j.xml 
+  821  docker build -t lodestar .
+  823  docker build -t lodestar .
+  833  docker build -t lodestar .
+  835  docker build -t lodestar .
+  838  docker build -t lodestar .
+  840  docker build -t lodestar .
+  842  docker build -t lodestar .
+  846  docker build -t lodestar .
+  848  docker build -t lodestar .
+  849  docker kill lodestart
+  850  docker kill lodestar
+  851  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  853  docker build -t lodestar .
+  854  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  855  docker logs lodestar --follow
+  856  docker exec -it lodestar bash
+  860  nano /home/malic/docker/openlifedata/lodestar/web-ui/src/main/resources/lode.properties
+  861  docker exec -it lodestar bash
+  870  docker run --name lodestar -d -p 8080:8080 --rm lodestar 
+  871  nano docker-compose.yml 
+  872  docker kill lodestart
+  873  docker kill lodestar
+  874  docker-compose up -d
+  875  nano docker-compose.yml 
+  876  docker-compose up -d
+  877  nano docker-compose.yml 
+  878  docker-compose up -d
+  879  nano docker-compose.yml 
+  880  docker-compose up -d
+  881  nano docker-compose.yml 
+  882  docker-compose up -d
+  885  nano docker-compose.yml 
+  886  nano ../openlifedata/docker-compose.yml 
+  887  nano docker-compose.yml 
+  888  docker-compose up -d --build
+  889  docker-compose down
+  890  docker-compose up -d
+  891  nano docker-compose.yml 
+  893  docker-compose down
+  895  docker-compose down
+  896  docker-compose up -d --build
+  898  docker-compose up -d --build
+  901  mv config-lodestar config-docker
+  905  docker-compose up -d --build
+  907  docker-compose up -d --build
+  915  nano docker-compose.yml 
+  916  docker-compose up -d --build
+  920  ls ./config-docker/lode.properties 
+  923  docker-compose up -d --build
+  924  docker-compose up -d --force-recreate
+  925  docker-compose up -it --force-recreate
+  926  docker-compose up --force-recreate
+  927  docker-compose down
+  928  docker system prune -a
+  929  docker-compose up -d
+  930  docker-compose up
+  931  nano lodestar/config-docker/lode.properties 
+  934  nano docker-compose.yml 
+  935  docker-compose up -d
+  936  nano docker-compose.yml 
+  937  docker-compose up -d
+  938  nano lodestar/config-docker/lode.properties 
+  939  docker-compose down
+  940  docker-compose up -d
+  941  docker-compose down
+  942  docker-compose up
+  943  nano docker-compose.yml 
+  944  docker-compose up
+  945  docker-compose up -d
+  946  nano docker-compose.yml 
+  947  docker-compose up -d
+  948  nano docker-compose.yml 
+  949  docker-compose up -d
+  951  docker-compose up -d
+  952  nano lodestar/config-docker/lode.properties 
+  953  docker-compose up -d
+  954  docker-compose down
+  956  docker-compose up --force-recreate
+  957  docker-compose up -d --force-recreate
+  963  cd ~/docker/bio2rdf
+  965  docker-compose up -d --force-recreate
+  967  docker-compose up -d --force-recreate
+  969  nano docker
+  970  cd docker
+  975  cd docker
+  978  docker-compose up -d
+  982  nano prefixcommons_on_docker.sh 
+  983  cd docker/bio2rdf/nginx.conf 
+  984  cd docker/bio2rdf/
+  988  docker-compose up -d
+  989  docker-compose down && docker-compose up -d
+  992  cd config-docker/
+  997  nano docker-compose.yml 
+  998  cd docker/kraken/
+ 1003  docker build -t translator_dqa .
+ 1004  docker run -it --rm translator_dqa -h
+ 1006  docker build -t translator_dqa .
+ 1007  docker run -it --rm translator_dqa -h
+ 1009  docker build -t translator_dqa .
+ 1010  docker run -it --rm translator_dqa -h
+ 1013  docker build -t translator_dqa .
+ 1014  docker run -it --rm translator_dqa -h
+ 1015  docker run -it --rm translator_dqa
+ 1017  docker build -t translator_dqa .
+ 1018  docker run -it --rm translator_dqa
+ 1020  docker run -it --rm translator_dqa -h
+ 1023  docker build -t translator_dqa .
+ 1024  docker run -it --rm translator_dqa -h
+ 1026  docker build -t translator_dqa .
+ 1027  docker run -it --rm translator_dqa -h
+ 1028  docker run -it --rm translator_dqa -f
+ 1029  docker run -it --rm translator_dqa -h
+ 1032  docker run -it --rm translator_dqa -h
+ 1035  docker run -it --rm translator_dqa -h
+ 1037  docker run -it --rm translator_dqa -f https://fairsharing.org/biodbcore-000340
+ 1038  docker run -it --rm translator_dqa -f -v /data/dqaoutput:./Output  https://fairsharing.org/biodbcore-000340
+ 1039  docker run -it --rm  -v /data/dqaoutput:./Output translator_dqa -f https://fairsharing.org/biodbcore-000340
+ 1040  docker run -it --rm  -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -f https://fairsharing.org/biodbcore-000340
+ 1044  docker run -it --rm translator_dqa -h
+ 1053  docker run -it --rm  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -f https://fairsharing.org/biodbcore-000340
+ 1054  docker run -it --rm  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -h
+ 1055  docker run -it --rm  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
+ 1056  nano ../prefixcommons_on_docker.sh 
+ 1058  docker build -t translator_dqa .
+ 1059  docker run -it --rm  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
+ 1060  docker build -t translator_dqa .
+ 1062  docker build -t translator_dqa .
+ 1063  docker run -it --rm -p 7200:7200  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
+ 1065  docker build -t translator_dqa .
+ 1066  docker run -it --rm -p 7200:7200  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
+ 1068  docker build -t translator_dqa .
+ 1069  docker run -it --rm -p 7200:7200  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
+ 1071  docker build -t translator_dqa .
+ 1077  docker run -it --rm -p 7200:7200  -v /data/dqainput/:/root/NCATS-Translator-DQA/Input/ -v /data/dqaoutput:/root/NCATS-Translator-DQA/Output/ translator_dqa -h
+ 1078  history | grep docker > commands.txt
