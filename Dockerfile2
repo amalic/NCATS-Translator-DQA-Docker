@@ -1,7 +1,7 @@
-FROM python:3.6
+FROM python:3.5
 
-LABEL maintainer "Alexander Malic <alexander.malic@maastrichtuniverstity.nl>" \
-      maintainer "Pedro Hernandez <p.hernandezserrano@maastrichtuniverstity.nl>"
+LABEL maintainer "Alexander Malic <alexander.malic@maastrichtuniverstity.nl>"
+LABEL maintainer "Pedro Hernandez <p.hernandezserrano@maastrichtuniverstity.nl>"
 
 ADD graphdb /etc/init.d/
 
@@ -12,8 +12,6 @@ RUN cd && \
     apt update && \
     apt install git -y && \
     apt install maven -y && \
-    apt install nano -y && \
-    apt install netcat -y && \
     pip3 install requests lxml pandas rdflib && \
     apt install -t jessie-backports openjdk-8-jdk -y && \
     update-java-alternatives --set java-1.8.0-openjdk-amd64 && \
@@ -31,6 +29,8 @@ RUN cd && \
 WORKDIR /root/NCATS-Translator-DQA/ncats_translator_dqa
 
 COPY entrypoint.sh ./
+
+RUN apt install netcat -y
 
 ENTRYPOINT ["./entrypoint.sh"]
 
