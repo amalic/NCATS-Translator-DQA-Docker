@@ -19,14 +19,16 @@ RUN cd && \
     update-java-alternatives --set java-1.8.0-openjdk-amd64 && \
     rm /usr/lib/jvm/default-java && ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /usr/lib/jvm/default-java && \
     export JAVA_HOME=/usr/lib/jvm/default-java && \
-    git clone https://github.com/pedrohserrano/NCATS-Translator-DQA && \
+    git clone https://github.com/ChunhuaWeng/NCATS-Translator-DQA.git && \
     git clone https://github.com/AKSW/RDFUnit.git && \
     cd RDFUnit && mvn -pl rdfunit-validate -am clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -Dgpg.skip=true -Dsource.skip=true && \
     cd && wget http://go.pardot.com/e/45622/7a-graphdb-free-8-3-1-dist-zip/4yxf7s/1139804593 -O graphdb-free-8.3.1-dist.zip && \
     unzip graphdb-free-8.3.1-dist.zip && \
     cd NCATS-Translator-DQA/ncats_translator_dqa && \
+    cp config.py.DEFAULT config.py && \
     chmod +x /etc/init.d/graphdb && \
-    chmod +x ./translator_dqa.py
+    echo "path_output = '/root/NCATS-Translator-DQA/Output/'" >> config.py && \
+    echo "path_rdfunit= '/root/RDFUnit/'" >> config.py
 
 WORKDIR /root/NCATS-Translator-DQA/ncats_translator_dqa
 
