@@ -1,4 +1,4 @@
-FROM python:3.6
+lsFROM python:3.6
 
 LABEL maintainer "Alexander Malic <alexander.malic@maastrichtuniverstity.nl>" \
       maintainer "Pedro Hernandez <p.hernandezserrano@maastrichtuniverstity.nl>"

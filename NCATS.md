@@ -1,57 +1,4 @@
 
-## Runing the container
-1. First we build the image  
-`docker build -t translator_dqa .`
-
-2. Creating the container  
-
-- Running and removing  
-`docker run -it --rm -p 7200:7200  -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ translator_dqa -h` (doesn't has a direct action)
-- File from url  
-`docker run -it --rm -p 7200:7200  -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ translator_dqa -f https://biosharing.org/biodbcore-000015` (it runs but doesn't connect to graphdb, is not creating the ports?)
-- File from directory  
-`docker run -it --rm -p 7200:7200 -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl`(encoding error)
-
-- Maintain the container  
-`docker run -it -p 7200:7200 -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ --name=dqa_box translator_dqa`
-(with bash)
-`docker run -it -p 7200:7200 -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ --name=dqa_box --entrypoint /bin/bash translator_dqa` 
-(levanta el contenedor con un entrypoint) out of the container `exit`
-
-3. Enter existing container   
-`docker start -ai dqa_box`
-
-- Same Examples/cases to run inside the container  
-`python translator_dqa.py -f https://biosharing.org/biodbcore-000015`
-`python translator_dqa.py -d ../Input/chembl_18.0_cellline.ttl`
-
-
-~/data
-kegg-drug.ttl
-chembl_18.0_cellline.ttl
-
-
-docker run -it --rm -p 7200:7200 -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
-
-
-- When we try to run the dataset
-
-    Traceback (most recent call last):
-      File "translator_dqa.py", line 119, in <module>
-        main()
-      File "translator_dqa.py", line 115, in main
-        translator_dqa(args.fair_url, args.file_data, args.file_multi, args.schema)
-      File "translator_dqa.py", line 64, in translator_dqa
-        computational_metrics(file_data, schema)
-      File "/root/NCATS-Translator-DQA/ncats_translator_dqa/computational_metrics/computational_metrics.py", line 30, in computational_metrics
-        file_rdfunit_output = rdfunit.rdfunit(file_dataset, schema)
-      File "/root/NCATS-Translator-DQA/ncats_translator_dqa/computational_metrics/RDFUnitWrapper.py", line 41, in rdfunit
-        stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='UTF-8', cwd=self.path_rdfunit)
-      File "/usr/local/lib/python3.5/subprocess.py", line 383, in run
-        with Popen(*popenargs, **kwargs) as process:
-    TypeError: __init__() got an unexpected keyword argument 'encoding'
-
-
 - Runing from the original repo
 cd \
 cd NCATS-Translator-DQA \
@@ -132,6 +79,23 @@ check ports `docker inspect $container_id | $container_name`
 https://data.monarchinitiative.org/ttl/
 
 
+
+- When we try to run the dataset
+
+    Traceback (most recent call last):
+      File "translator_dqa.py", line 119, in <module>
+        main()
+      File "translator_dqa.py", line 115, in main
+        translator_dqa(args.fair_url, args.file_data, args.file_multi, args.schema)
+      File "translator_dqa.py", line 64, in translator_dqa
+        computational_metrics(file_data, schema)
+      File "/root/NCATS-Translator-DQA/ncats_translator_dqa/computational_metrics/computational_metrics.py", line 30, in computational_metrics
+        file_rdfunit_output = rdfunit.rdfunit(file_dataset, schema)
+      File "/root/NCATS-Translator-DQA/ncats_translator_dqa/computational_metrics/RDFUnitWrapper.py", line 41, in rdfunit
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='UTF-8', cwd=self.path_rdfunit)
+      File "/usr/local/lib/python3.5/subprocess.py", line 383, in run
+        with Popen(*popenargs, **kwargs) as process:
+    TypeError: __init__() got an unexpected keyword argument 'encoding'
 
 
     There was an error running rdfunit
