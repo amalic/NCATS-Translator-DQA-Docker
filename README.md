@@ -1,5 +1,4 @@
 # NCATS Translator
-[![Python](https://img.shields.io/pypi/pyversions/Django.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -19,7 +18,8 @@ Installing [Docker](https://docs.docker.com/) for [Mac](https://docs.docker.com/
 
 Clone the repo
 
-        git clone https://github.com/pedrohserrano/NCATS-Translator-DQA
+        git clone https://github.com/amalic/NCATS-Translator-DQA-Docker.git && \
+        cd NCATS-Translator-DQA-Docker
 
 Building the Docker image  
 
@@ -30,42 +30,49 @@ Runing a Docker container
         docker run -it --rm -p 7200:7200  -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ translator_dqa -h
 
 
-#### Run translator on a url   
+##### Run translator on a url   
 
         docker run -it --rm -p 7200:7200  \
-        -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ \
-        -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         translator_dqa -f https://biosharing.org/biodbcore-000015
 
-#### Run translator on a local file
+##### Run translator on a local file
 
         docker run -it --rm -p 7200:7200 \
-        -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ \
-        -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
 
-#### Build the container and keep it running  
+##### Build the container and keep it running  
 
         docker run -it -p 7200:7200 \
-        -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ \
-        -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         --name=dqa_box translator_dqa
 
-- Maintain with bash)
-`docker run -it -p 7200:7200 -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ --name=dqa_box --entrypoint /bin/bash translator_dqa` 
-(levanta el contenedor con un entrypoint) out of the container `exit`
+##### Build the container and run bash
 
-3. Enter existing container   
-`docker start -ai dqa_box`
+        docker run -it -p 7200:7200 \
+        -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
+        --name=dqa_box --entrypoint /bin/bash translator_dqa 
 
-- Runing inside the container
-`./translator_dqa.py -d /root/NCATS-Translator-DQA/Input/animalqtldb.ttl`
+(exit the container `exit`)
 
-go to
+##### Run again an existing container   
 
-        http://localhost:7200/
+        docker start -ai dqa_box
+
+##### Runing inside the container
+
+        ./translator_dqa.py -d /root/NCATS-Translator-DQA/Input/animalqtldb.ttl
+
+go to [http://localhost:7200/](http://localhost:7200/)
 
 ## Licence
+
+The MIT License (MIT) 2017
 
 ## Acknowledgments
 
