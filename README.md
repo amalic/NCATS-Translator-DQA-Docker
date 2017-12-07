@@ -16,42 +16,48 @@ Installing [Docker](https://docs.docker.com/) for [Mac](https://docs.docker.com/
 
 ## Usage
 
-Clone the repo
+##### Clone the repo
 
         git clone https://github.com/amalic/NCATS-Translator-DQA-Docker.git && \
         cd NCATS-Translator-DQA-Docker
 
-Building the Docker image  
+##### Building the Docker image  
 
         docker build -t translator_dqa .
 
-Runing a Docker container  
+##### Runing a Docker container  
+---
 
-        docker run -it --rm -p 7200:7200  -v ~/data/DQA-input/:/root/NCATS-Translator-DQA/Input/ -v ~/data/DQA-output:/root/NCATS-Translator-DQA/Output/ translator_dqa -h
+Options: 
+##### 1. Run translator and show help message
 
+        docker run -it --rm -p 7200:7200  \
+        -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
+        -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
+        translator_dqa -h
 
-##### Run translator on a url   
+##### 2. Run translator on a url   
 
         docker run -it --rm -p 7200:7200  \
         -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
         -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         translator_dqa -f https://biosharing.org/biodbcore-000015
 
-##### Run translator on a local file
+##### 3. Run translator on a local file
 
         docker run -it --rm -p 7200:7200 \
         -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
         -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         translator_dqa -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
 
-##### Build the container and keep it running  
+##### 4. Build the container and keep it running  
 
         docker run -it -p 7200:7200 \
         -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
         -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         --name=dqa_box translator_dqa
 
-##### Build the container and run bash
+##### 5. Build the container and run bash
 
         docker run -it -p 7200:7200 \
         -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
@@ -60,11 +66,11 @@ Runing a Docker container
 
 (exit the container `exit`)
 
-##### Run again an existing container   
+##### 5.1 Run again an existing container   
 
         docker start -ai dqa_box
 
-##### Runing inside the container
+##### 5.2 Runing inside the container
 
         ./translator_dqa.py -d /root/NCATS-Translator-DQA/Input/animalqtldb.ttl
 
