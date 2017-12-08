@@ -3,7 +3,6 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Data Quality Assessment Implementation  |  Docker + RDFUnit
----
 
 A Dockerization of the NCATS Translator for Data Quality Analysis.   
 The purpose of this project is to provide automation of the [NCATS Translator](https://github.com/pedrohserrano/NCATS-Translator-DQA) stand-alone implementation in order to escalate on more general data quality assessment.
