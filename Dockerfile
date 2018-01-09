@@ -26,8 +26,9 @@ RUN cd && \
     unzip graphdb-free-8.3.1-dist.zip && \
     cd NCATS-Translator-DQA/ncats_translator_dqa && \
     chmod +x /etc/init.d/graphdb && \
-    chmod +x ./translator_dqa.py && \
-    export JAVA_TOOL_OPTIONS="-Xmx1024m -Xms1024m"
+    chmod +x ./translator_dqa.py
+
+ENV JAVA_TOOL_OPTIONS="-Xmx1024m -Xms1024m"
 
 WORKDIR /root/NCATS-Translator-DQA/ncats_translator_dqa
 
