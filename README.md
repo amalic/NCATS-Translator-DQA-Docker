@@ -27,14 +27,14 @@ The purpose of this project is to provide automation of the [NCATS Translator](h
 ##### Run the Docker container  
 
 - Options  
-##### 1. Run translator and show the options to usage
+##### 1. Run translator and show usage text
 
         docker run -it --rm -p 7200:7200  \
         -v ~/NCATS-Translator-DQA-Docker/data/Input:/root/NCATS-Translator-DQA/Input/ \
         -v ~/NCATS-Translator-DQA-Docker/data/Output:/root/NCATS-Translator-DQA/Output/ \
         translator_dqa -h
 
-##### 2. Run translator on a URL   
+##### 2. Run translator with a URL
 
         docker run -it --rm -p 7200:7200  \
         -v "$PWD"/data/Input:/root/NCATS-Translator-DQA/Input/ \
@@ -43,7 +43,7 @@ The purpose of this project is to provide automation of the [NCATS Translator](h
 
 On this option you have to make shure that change the url for your dataset url, we expect 2 outputs here `"$PWD"/data/Output`
 
-##### 3. Run translator on a local file
+##### 3. Run translator with a local file
 
         docker run -it --rm -p 7200:7200 \
         -v "$PWD"/data/Input:/root/NCATS-Translator-DQA/Input/ \
@@ -60,7 +60,7 @@ We provide a dataset for testing, but you can manually put your `.ttl` files on 
         --name=dqa_box --entrypoint /bin/bash translator_dqa 
 
 We need to start the GraphDB service `service graphdb start`  
-In case you want to keep the container running, then you can make more than one task inside the container, the running command:
+In case you want to keep the container running you can make more than one task inside the container, the running command:
 
         ./translator_dqa.py -d /root/NCATS-Translator-DQA/Input/kegg-drug.ttl
 
