@@ -9,7 +9,7 @@ The purpose of this project is to provide automation of the [NCATS Translator](h
 
 ## Prerequisites
 
-- Installing [Docker](https://docs.docker.com/) for [Mac](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/download-docker-for-windows)  
+- [Docker](https://docs.docker.com/) for [Mac](https://docs.docker.com/docker-for-mac/install/) and [Windows](https://docs.docker.com/docker-for-windows/install/download-docker-for-windows)  
 ![](img/docker.png)
 
 ## Usage
